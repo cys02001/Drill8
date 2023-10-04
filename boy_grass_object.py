@@ -32,28 +32,32 @@ class Big_Ball:
         self.x, self.y = random.randint(100, 700), 599
         self.frame = 0
         self.image = load_image('ball41x41.png')
+        self.speed = random.randint(2, 5)
 
     def update(self):
         self.frame = random.randint(0, 0)
-        if self.y>70:
-            self.y -= 5
+        if self.y > 70:
+            self.y -= self.speed
 
     def draw(self):
         self.image.clip_draw(self.frame * 41, 0, 41, 41, self.x, self.y)
+
 
 class Small_Ball:
     def __init__(self):
         self.x, self.y = random.randint(100, 700), 599
         self.frame = 0
         self.image = load_image('ball21x21.png')
+        self.speed = random.randint(2, 5)
 
     def update(self):
         self.frame = random.randint(0, 0)
-        if self.y>60:
-            self.y -= 5
+        if self.y > 60:
+            self.y -= self.speed
 
     def draw(self):
         self.image.clip_draw(self.frame * 21, 0, 21, 21, self.x, self.y)
+
 
 def handle_events():
     global running
@@ -86,6 +90,7 @@ def reset_world():
     world += big_balls
     world += small_balls
 
+
 def update_world():
     grass.update()
     for boy in world:
@@ -94,6 +99,7 @@ def update_world():
         big_ball.update()
     for small_ball in world:
         small_ball.update()
+
 
 def render_world():
     clear_canvas()
@@ -104,6 +110,7 @@ def render_world():
     for small_ball in world:
         small_ball.draw()
     update_canvas()
+
 
 open_canvas()
 
