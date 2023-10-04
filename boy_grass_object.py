@@ -35,7 +35,8 @@ class Big_Ball:
 
     def update(self):
         self.frame = random.randint(0, 0)
-        self.y -= 5
+        if self.y>90:
+            self.y -= 5
 
     def draw(self):
         self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, self.y)
