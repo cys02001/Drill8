@@ -32,7 +32,7 @@ class Big_Ball:
         self.x, self.y = random.randint(100, 700), 599
         self.frame = 0
         self.image = load_image('ball41x41.png')
-        self.speed = random.randint(2, 5)
+        self.speed = random.randint(1, 5)
 
     def update(self):
         self.frame = random.randint(0, 0)
@@ -50,7 +50,7 @@ class Small_Ball:
         self.x, self.y = random.randint(100, 700), 599
         self.frame = 0
         self.image = load_image('ball21x21.png')
-        self.speed = random.randint(2, 5)
+        self.speed = random.randint(1, 5)
 
     def update(self):
         self.frame = random.randint(0, 0)
